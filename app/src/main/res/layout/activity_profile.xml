@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.Profile">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/white"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:titleMarginStart="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title"
+            android:textColor="#050e0b"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNavViewBar"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="-1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgpImage_profile"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/emma"
+                app:civ_border_color="#555e5d"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/txtBio_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/txtBio_profile"
+                android:layout_width="261dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="12dp"
+                android:background="#FFFFFF"
+                android:text="Update your Bio"
+                android:padding="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgpImage_profile"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtName_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:text="Full Name"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgpImage_profile" />
+
+
+            <TextView
+                android:id="@+id/txtUsername_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="\@username"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtName_profile" />
+
+            <TextView
+                android:id="@+id/txtLocation_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="Location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUsername_profile" />
+
+            <Button
+                android:id="@+id/btnEditProfile_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Edit Profile"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtLocation_profile"
+                android:backgroundTint="#ED6C6C"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavViewBar"
+        android:background="@drawable/white_gray_border_top"
+        app:menu="@menu/bottom_navigation_menu"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
