@@ -15,14 +15,15 @@
         app:titleMarginStart="40dp">
 
         <TextView
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/user_name"
-            android:textStyle="bold"
-            android:textSize="25sp"
             android:layout_gravity="center"
-            android:id="@+id/toolbar_title"
-            android:textColor="#050e0b"/>
+            android:fontFamily="@font/coustard"
+            android:text="@string/user_name"
+            android:textColor="#050e0b"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -39,8 +40,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp">
+            android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgpImage_profile"
@@ -53,14 +53,17 @@
                 app:layout_constraintEnd_toStartOf="@+id/txtBio_profile"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/txtBio_profile"
                 android:layout_width="261dp"
                 android:layout_height="96dp"
                 android:layout_marginTop="12dp"
                 android:background="#FFFFFF"
-                android:text="Update your Bio"
+                android:fontFamily="@font/montserrat"
                 android:padding="5dp"
+                android:text="Update your Bio"
+                android:textColor="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imgpImage_profile"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -71,7 +74,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Full Name"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgpImage_profile" />
@@ -83,7 +88,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat"
                 android:text="\@username"
+                android:textColor="#171717"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtName_profile" />
 
@@ -93,22 +100,45 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat"
                 android:text="Location"
+                android:textColor="#171717"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtUsername_profile" />
 
             <Button
                 android:id="@+id/btnEditProfile_profile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="376dp"
+                android:layout_height="46dp"
                 android:layout_marginTop="15dp"
+                android:backgroundTint="#ED6C6C"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="Edit Profile"
                 android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLocation_profile"
-                android:backgroundTint="#ED6C6C"/>
+                app:layout_constraintTop_toBottomOf="@+id/txtLocation_profile" />
 
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.526"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEditProfile_profile" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
