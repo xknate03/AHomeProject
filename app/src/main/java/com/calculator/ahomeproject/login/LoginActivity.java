@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.calculator.ahomeproject.R;
 import com.calculator.ahomeproject.home.MainActivity;
-import com.calculator.ahomeproject.home.profile.Profile;
 import com.calculator.ahomeproject.signup.SignUpActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;

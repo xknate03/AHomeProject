@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.profile;
+package com.calculator.ahomeproject.home.profileFragment;
 
 import android.os.Bundle;
 

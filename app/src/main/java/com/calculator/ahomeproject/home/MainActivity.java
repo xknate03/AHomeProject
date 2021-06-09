@@ -4,16 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.post.Post;
-import com.calculator.ahomeproject.home.profile.Profile;
+import com.calculator.ahomeproject.home.postFragment.PostFragment;
+import com.calculator.ahomeproject.home.profileFragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -29,19 +29,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         //Initialize and assign variable
         //using fragments:
         bottomNavigationView = findViewById(R.id.bottomNavViewBar);
+        performItemSelectedListener(bottomNavigationView);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
-
-
-        //set home selected using activities
-//        bottomNavigationView.setSelectedItemId(R.id.ic_home);
-//        performItemSelectedListener();
 
 
         //connecting to ParseServer
@@ -79,66 +73,43 @@ public class MainActivity extends AppCompatActivity {
             });
         });
     }
+    //end of onCreate
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            item -> {
+    public void performItemSelectedListener(BottomNavigationView bottomNavigationView) {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
                 Fragment selectedFragment = null;
-
                 switch (item.getItemId()) {
                     case R.id.ic_home:
+                        bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new HomeFragment();
                         break;
                     case R.id.ic_groups:
+                        bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new GroupsFragment();
                         break;
                     case R.id.ic_post:
+                        bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new PostFragment();
+
                         break;
                     case R.id.ic_notifs:
+                        bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new NotifsFragment();
                         break;
                     case R.id.ic_profile:
+                        bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new ProfileFragment();
                         break;
                 }
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        selectedFragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
                 return true;
-            };
+            }
+        });
+    }
 
 
-//    public void performItemSelectedListener() {
-//        //Perform ItemSelected Listener
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
-//                switch(item.getItemId()) {
-//                    case R.id.ic_home:
-//                        return true;
-//                    case R.id.ic_groups:
-//                        startActivity(new Intent(getApplicationContext(), Groups.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.ic_post:
-//                        startActivity(new Intent(getApplicationContext(), Post.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.ic_notifs:
-//                        startActivity(new Intent(getApplicationContext(), Notifs.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//                    case R.id.ic_profile:
-//                        startActivity(new Intent(getApplicationContext(), Profile.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
-//
-//
-//
-//                }
-//                return false;
-//            }
-//        });
-//    }
 
 }

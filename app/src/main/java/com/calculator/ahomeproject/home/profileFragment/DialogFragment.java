@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.profile;
+package com.calculator.ahomeproject.home.profileFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,27 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.login.LoginActivity;
-import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.ParseException;
+import com.calculator.ahomeproject.home.MainActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 
 public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
@@ -89,19 +79,29 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
                                     if(e1 ==null) {
                                         FancyToast.makeText(getContext(),"Profile updated", FancyToast.LENGTH_LONG,
                                                 FancyToast.SUCCESS,false).show();
-                                        getDialog().dismiss();
+                                        dismiss();
                                     }else {
-                                        FancyToast.makeText(getContext(), "Try again later", FancyToast.LENGTH_LONG,
-                                                FancyToast.ERROR,false).show();
                                     }
                                 });
 //
                             } else {
                                 Log.d("Tag", e12.getMessage());
+
                             }
                         });
                     });
 
+                    //passing new value
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("prof_name", updateName);
+                    editor.putString("prof_bio", updateBio);
+                    editor.putString("prof_loc", updateLocation);
+                    editor.apply();
+
+                }else {
+                    FancyToast.makeText(getContext(), "Fields cannot be left blank", FancyToast.LENGTH_LONG,
+                            FancyToast.ERROR,false).show();
                 }
 
             }
@@ -109,7 +109,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         });
 
         txtCancel_dialog_profile.setOnClickListener(v -> {
-            getDialog().cancel();
+            dismiss();
         });
 
         return view;
@@ -117,7 +117,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
 
     private void refreshActivity() {
-        Intent intent = new Intent(getContext(), Profile.class);
+        Intent intent = new Intent(getContext(), MainActivity.class);
         startActivity(intent);
     }
 
