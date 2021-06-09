@@ -2,6 +2,7 @@ package com.calculator.ahomeproject.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,15 +23,26 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         //Initialize and assign variable
+        //using fragments:
         bottomNavigationView = findViewById(R.id.bottomNavViewBar);
-        //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.ic_home);
-        performItemSelectedListener();
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new HomeFragment()).commit();
+
+
+        //set home selected using activities
+//        bottomNavigationView.setSelectedItemId(R.id.ic_home);
+//        performItemSelectedListener();
+
 
         //connecting to ParseServer
         //creating a parse query to get the username by using whereEqualTo, setting limit of object collected to 1
@@ -69,38 +81,64 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            item -> {
+                Fragment selectedFragment = null;
 
-    public void performItemSelectedListener() {
-        //Perform ItemSelected Listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
-                switch(item.getItemId()) {
+                switch (item.getItemId()) {
                     case R.id.ic_home:
-                        return true;
+                        selectedFragment= new HomeFragment();
+                        break;
                     case R.id.ic_groups:
-                        startActivity(new Intent(getApplicationContext(), Groups.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        selectedFragment= new GroupsFragment();
+                        break;
                     case R.id.ic_post:
-                        startActivity(new Intent(getApplicationContext(), Post.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        selectedFragment= new PostFragment();
+                        break;
                     case R.id.ic_notifs:
-                        startActivity(new Intent(getApplicationContext(), Notifs.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        selectedFragment= new NotifsFragment();
+                        break;
                     case R.id.ic_profile:
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-
-
+                        selectedFragment= new ProfileFragment();
+                        break;
                 }
-                return false;
-            }
-        });
-    }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        selectedFragment).commit();
+                return true;
+            };
+
+
+//    public void performItemSelectedListener() {
+//        //Perform ItemSelected Listener
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
+//                switch(item.getItemId()) {
+//                    case R.id.ic_home:
+//                        return true;
+//                    case R.id.ic_groups:
+//                        startActivity(new Intent(getApplicationContext(), Groups.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.ic_post:
+//                        startActivity(new Intent(getApplicationContext(), Post.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.ic_notifs:
+//                        startActivity(new Intent(getApplicationContext(), Notifs.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//                    case R.id.ic_profile:
+//                        startActivity(new Intent(getApplicationContext(), Profile.class));
+//                        overridePendingTransition(0,0);
+//                        return true;
+//
+//
+//
+//                }
+//                return false;
+//            }
+//        });
+//    }
 
 }
