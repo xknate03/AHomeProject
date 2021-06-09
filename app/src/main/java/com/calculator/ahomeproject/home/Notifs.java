@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.calculator.ahomeproject.R;
+import com.calculator.ahomeproject.home.post.Post;
+import com.calculator.ahomeproject.home.profile.Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;

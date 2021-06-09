@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AHomeProject">
-        <activity android:name=".home.Post"></activity>
-        <activity android:name=".home.Profile" />
+        <activity android:name=".home.post.Post"></activity>
+        <activity android:name=".home.profile.Profile" />
         <activity android:name=".home.Notifs" />
         <activity android:name=".home.Groups" />
         <activity android:name=".home.MainActivity" />

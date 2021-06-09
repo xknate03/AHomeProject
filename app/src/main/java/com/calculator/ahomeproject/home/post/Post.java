@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home;
+package com.calculator.ahomeproject.home.post;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.calculator.ahomeproject.R;
+import com.calculator.ahomeproject.home.Groups;
+import com.calculator.ahomeproject.home.MainActivity;
+import com.calculator.ahomeproject.home.Notifs;
+import com.calculator.ahomeproject.home.profile.Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +31,12 @@ public class Post extends AppCompatActivity {
         performItemSelectedListener();
 
     }
+
+
+
+
+
+
 
     public void performItemSelectedListener() {
         //Perform ItemSelected Listener

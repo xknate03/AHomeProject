@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.Profile">
+    tools:context=".home.profile.Profile">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -109,9 +109,10 @@
             <Button
                 android:id="@+id/btnEditProfile_profile"
                 android:layout_width="376dp"
-                android:layout_height="46dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#ED6C6C"
+                android:onClick="editProfileListener"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Edit Profile"

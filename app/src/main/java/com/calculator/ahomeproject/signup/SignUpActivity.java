@@ -58,6 +58,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     profile.put("full_name", edtFullNameSignup.getText().toString());
                     profile.put("email", edtEmailSignup.getText().toString());
                     profile.put("user_name", edtUsernameSignup.getText().toString());
+                    profile.put("bio", "update your profile");
+                    profile.put("location", "update your profile");
                     profile.saveInBackground(new SaveCallback() {
                         @Override
                         public void done(ParseException e) {
