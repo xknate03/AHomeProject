@@ -1,16 +1,33 @@
 package com.calculator.ahomeproject.home.postFragment;
 
-import android.os.Bundle;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+
 import com.calculator.ahomeproject.R;
+import com.calculator.ahomeproject.home.MainActivity;
 
 public class PostSomething extends AppCompatActivity {
+    ImageView imgBack_post_something_act;
     @Override
-    protected void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_something);
+
+
+        imgBack_post_something_act = findViewById(R.id.imgBack_post_something_act);
+
+
+    }
+
+    public void goBack(View view) {
+        startActivity(new Intent(PostSomething.this, MainActivity.class));
+    }
+
+    public void postSomething(View view) {
+        startActivity(new Intent(PostSomething.this, MainActivity.class));
     }
 }

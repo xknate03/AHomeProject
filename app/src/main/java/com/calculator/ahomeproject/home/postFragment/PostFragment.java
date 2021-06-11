@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.calculator.ahomeproject.R;
+import com.calculator.ahomeproject.login.LoginActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -25,19 +26,19 @@ public class PostFragment extends Fragment {
 
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_post, container, false);
+//
+        btnPost_post_fragment = v.findViewById(R.id.btnPost_post_fragment);
+        btnForAdoption_post_fragment = v.findViewById(R.id.btnForAdoption_post_fragment);
 
         btnPost_post_fragment.setOnClickListener(v1 -> {
-            Intent intent = new Intent(getContext(), PostSomething.class);
-            startActivity(intent);
+            Intent in = new Intent(getContext(), PostSomething.class);
+            startActivity(in);
         });
 
         btnForAdoption_post_fragment.setOnClickListener(v12 -> {
             Intent intent = new Intent(getContext(), ForAdoption.class);
             startActivity(intent);
         });
-
-
-
 
         return v;
     }

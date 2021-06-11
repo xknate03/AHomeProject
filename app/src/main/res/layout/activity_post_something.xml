@@ -3,31 +3,114 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".home.postFragment.PostSomething">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/post_something_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray">
+        android:background="@color/white"
+        android:backgroundTint="@color/main_2"
+        android:paddingEnd="10dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:titleMarginStart="40dp">
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="29dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_back" />
-        <TextView
+            android:id="@+id/imgBack_post_something_act"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Post Something"
-            android:textSize="20sp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
-            android:layout_gravity="center"/>
+            android:onClick="goBack"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/fragment_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/montserrat"
+            android:text="Write a post"
+            android:textColor="#050e0b"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnPost_post_something"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/main"
+
+            android:fontFamily="@font/montserrat"
+            android:onClick="postSomething"
+            android:text="Post"
+            android:textAllCaps="false" />
     </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scroll_view_post_something"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/post_something_toolbar"
+        android:layout_marginTop="-1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgpImage_profile3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="60dp"
+                android:src="@drawable/emma"
+                app:civ_border_color="#555e5d"
+                app:civ_border_width="2dp"
+                app:layout_constraintEnd_toStartOf="@+id/txtName_post_something_act"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtName_post_something_act"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Full Name"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/imgpImage_profile3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextMultiLine2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/edit_multi_line"
+                android:ems="10"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start|top"
+                android:hint="Write something here"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgpImage_profile3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

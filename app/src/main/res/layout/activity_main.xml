@@ -20,7 +20,8 @@
         android:background="@drawable/white_gray_border_top"
         app:menu="@menu/bottom_navigation_menu"
         android:layout_alignParentBottom="true"
-        app:backgroundTint="@color/gray"/>
+        app:itemIconTint="@color/black"
+        app:backgroundTint="@color/white"/>
 
 
 
