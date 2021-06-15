@@ -1,6 +1,8 @@
 package com.calculator.ahomeproject.home.postFragment;
 
+import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +16,18 @@ import androidx.fragment.app.Fragment;
 
 import com.calculator.ahomeproject.R;
 import com.calculator.ahomeproject.login.LoginActivity;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.jetbrains.annotations.NotNull;
 
 public class PostFragment extends Fragment {
     Button btnPost_post_fragment, btnForAdoption_post_fragment;
+    Uri imageUri;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -36,10 +45,50 @@ public class PostFragment extends Fragment {
         });
 
         btnForAdoption_post_fragment.setOnClickListener(v12 -> {
-            Intent intent = new Intent(getContext(), ForAdoption.class);
-            startActivity(intent);
+            runTimePermission();
         });
 
         return v;
+    }
+
+    // for getting images from gallery for uploading
+    private void runTimePermission() {
+        Dexter.withContext(getContext())
+                .withPermission(
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                ).withListener(new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                galleryIntent();
+            }
+
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken token) {
+                token.continuePermissionRequest();
+            }
+        }).check();
+    }
+
+    private void galleryIntent() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 100);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 100 && data != null) {
+            imageUri = data.getData();
+            Intent in = new Intent(getContext(), ForAdoption.class);
+            in.putExtra("img_Upload", imageUri.toString());
+            startActivity(in);
+        }
     }
 }

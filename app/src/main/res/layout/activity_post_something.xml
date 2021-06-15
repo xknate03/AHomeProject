@@ -43,7 +43,8 @@
             android:fontFamily="@font/montserrat"
             android:onClick="postSomething"
             android:text="Post"
-            android:textAllCaps="false" />
+            android:textAllCaps="false"
+            app:cornerRadius="20dp" />
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView

@@ -1,14 +1,24 @@
 package com.calculator.ahomeproject.home.profileFragment;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,9 +30,17 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.calculator.ahomeproject.R;
 import com.google.android.material.tabs.TabLayout;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.parse.ParseUser;
 
 import org.jetbrains.annotations.NotNull;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
     TextView fragment_toolbar_title, txtBio_profile_fragment, txtName_profile_fragment;
@@ -34,7 +52,8 @@ public class ProfileFragment extends Fragment {
     Button btnEditProfile_profile_fragment;
     SwipeRefreshLayout swipe_refresh;
     SharedPreferences prefs;
-
+    CircleImageView imgpImage_profile;
+    Uri imageUri;
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
@@ -52,13 +71,15 @@ public class ProfileFragment extends Fragment {
         btnEditProfile_profile_fragment = v.findViewById(R.id.btnEditProfile_profile_fragment);
         fragment_toolbar = v.findViewById(R.id.fragment_toolbar);
         //for tab layout
-        tabLayout_profile_fragment = v.findViewById(R.id.tabLayout_profile_fragment);
+        tabLayout_profile_fragment =    v.findViewById(R.id.tabLayout_profile_fragment);
         viewPager_profile_fragment = v.findViewById(R.id.viewPager_profile_fragment);
         FragmentManager fm = ((AppCompatActivity)getActivity()).getSupportFragmentManager();
         adapter = new FragmentAdapter(fm, getLifecycle());
         viewPager_profile_fragment.setAdapter(adapter);
         //for swipe refresh
         swipe_refresh = v.findViewById(R.id.swipe_refresh);
+
+        imgpImage_profile = v.findViewById(R.id.imgpImage_profile);
 
 
 
@@ -121,11 +142,61 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        imgpImage_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                runTimePermission();
+            }
+        });
+
+
 
         return v;
     }
     // end of onCreateView method
 
+
+
+    // for getting images from gallery for uploading
+    private void runTimePermission() {
+        Dexter.withContext(getContext())
+                .withPermission(
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                ).withListener(new PermissionListener() {
+            @Override
+            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                galleryIntent();
+            }
+
+            @Override
+            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken token) {
+                token.continuePermissionRequest();
+            }
+        }).check();
+    }
+
+    private void galleryIntent() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 100);
+    }
+
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 100 && data != null) {
+            imageUri = data.getData();
+            imgpImage_profile.setImageURI(imageUri);
+        }
+    }
 
     //for tab layout
     //adding tab names to tab layout
@@ -133,7 +204,6 @@ public class ProfileFragment extends Fragment {
         tabLayout.addTab(tabLayout_profile_fragment.newTab().setText(tabNames[0]));
         tabLayout.addTab(tabLayout_profile_fragment.newTab().setText(tabNames[1]));
         tabLayout.addTab(tabLayout_profile_fragment.newTab().setText(tabNames[2]));
-
     }
 
     //adding tab listener and setting pager
