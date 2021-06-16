@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.MainActivity;
+import com.calculator.ahomeproject.main.MainActivity;
 import com.calculator.ahomeproject.signup.SignUpActivity;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 

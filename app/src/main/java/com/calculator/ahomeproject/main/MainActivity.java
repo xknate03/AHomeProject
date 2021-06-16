@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home;
+package com.calculator.ahomeproject.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.postFragment.PostFragment;
-import com.calculator.ahomeproject.home.profileFragment.ProfileFragment;
+import com.calculator.ahomeproject.main.groupsFragment.GroupsFragment;
+import com.calculator.ahomeproject.main.homeFragment.HomeFragment;
+import com.calculator.ahomeproject.main.notifsFragment.NotifsFragment;
+import com.calculator.ahomeproject.main.postFragment.PostFragment;
+import com.calculator.ahomeproject.main.profileFragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //Initialize and assign variable
         //using fragments:
         bottomNavigationView = findViewById(R.id.bottomNavViewBar);
+
         performItemSelectedListener(bottomNavigationView);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

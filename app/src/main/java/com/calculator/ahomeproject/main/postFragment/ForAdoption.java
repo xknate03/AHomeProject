@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.postFragment;
+package com.calculator.ahomeproject.main.postFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
 import android.widget.Button;
@@ -14,9 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.MainActivity;
-import com.calculator.ahomeproject.login.LoginActivity;
-import com.parse.ParseUser;
+import com.calculator.ahomeproject.main.MainActivity;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 

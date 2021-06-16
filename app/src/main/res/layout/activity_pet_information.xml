@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.homeFragment.PetInformation">
+
+
+
+
+    <ScrollView
+        android:id="@+id/scroll_view_forAdoption"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/petInfo_toolbar"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/max"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/txtPetName_petInfo_activity"
+                android:text="Max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="25dp"
+                />
+
+            <TextView
+                android:id="@+id/txtPetSex_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Sex: Male"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetType_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Type: Dog"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetStatus_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Status: Adoptable"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetAge_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Age: 1 year"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetColor_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Color: Black and Brown"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetLocation_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Location: Laguna"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtPetAbout_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="About"
+                android:textColor="#1B1B1B"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPetDescription_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="@font/montserrat"
+                android:text="This is Max and he needs a new home."
+                android:textColor="#1B1B1B"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txtBy_petInfo_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/montserrat"
+                android:text="By"
+                android:textColor="#1B1B1B"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgpImage_profile"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/emma"
+                    app:civ_border_color="#555e5d"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtImageProfile_petInfo_activity"
+                        android:text="Emma Watson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="2dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtTimeStamp_petInfo_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="5 minutes ago"
+                        android:textColor="#1B1B1B"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragmentHome_toolbar"
+        android:background="@color/main"
+        android:theme="@style/ToolbarColoredBackArrow"
+        android:layout_alignParentBottom="true"
+        app:titleMarginStart="40dp">
+
+        <Button
+            android:id="@+id/btnSample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:backgroundTint="#FFFFFF"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textAllCaps="false"
+            app:cornerRadius="20dp"
+            android:text="Chat"
+            android:textColor="@color/main"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+</RelativeLayout>

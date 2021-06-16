@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.profileFragment;
+package com.calculator.ahomeproject.main.profileFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

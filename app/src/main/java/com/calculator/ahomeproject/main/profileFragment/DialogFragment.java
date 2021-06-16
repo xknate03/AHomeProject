@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.profileFragment;
+package com.calculator.ahomeproject.main.profileFragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.MainActivity;
+import com.calculator.ahomeproject.main.MainActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;

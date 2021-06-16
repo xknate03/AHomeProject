@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.calculator.ahomeproject">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,11 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AHomeProject">
-        <activity android:name=".home.postFragment.ForAdoption"></activity>
-        <activity android:name=".home.postFragment.PostSomething" />
-        <activity android:name=".home.post.Post" />
-        <activity android:name=".home.profile.Profile" />
-        <activity android:name=".home.MainActivity" />
+        <activity android:name=".main.homeFragment.PetInformation"></activity>
+        <activity android:name=".main.postFragment.ForAdoption" />
+        <activity android:name=".main.postFragment.PostSomething" />
+        <activity android:name=".main.post.Post" />
+        <activity android:name=".main.profile.Profile" />
+        <activity android:name=".main.MainActivity" />
         <activity android:name=".signup.SignUpActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>

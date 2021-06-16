@@ -2,13 +2,55 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff1100">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/fragmentHome_toolbar"
+        android:background="@color/main"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:titleMarginStart="40dp">
+
+        <EditText
+            android:id="@+id/edtSearchBar_home_fragment"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/edittextformat"
+            android:hint="Search here"
+            android:padding="7dp"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnSample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="click"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragmentHome_toolbar"
+        android:padding="8dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_fragment_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

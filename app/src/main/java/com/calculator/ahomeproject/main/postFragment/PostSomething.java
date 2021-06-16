@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.postFragment;
+package com.calculator.ahomeproject.main.postFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.home.MainActivity;
+import com.calculator.ahomeproject.main.MainActivity;
 
 public class PostSomething extends AppCompatActivity {
     ImageView imgBack_post_something_act;

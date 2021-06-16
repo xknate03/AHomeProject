@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.calculator.ahomeproject.home.HomeFragment"
+        android:name="com.calculator.ahomeproject.main.homeFragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.calculator.ahomeproject.home.profileFragment.ProfileFragment"
+        android:name="com.calculator.ahomeproject.main.profileFragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.calculator.ahomeproject.home.NotificationFragment"
+        android:name="com.calculator.ahomeproject.main.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
 </navigation>

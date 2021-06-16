@@ -1,4 +1,4 @@
-package com.calculator.ahomeproject.home.postFragment;
+package com.calculator.ahomeproject.main.postFragment;
 
 import android.Manifest;
 import android.content.Intent;
@@ -8,14 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.calculator.ahomeproject.R;
-import com.calculator.ahomeproject.login.LoginActivity;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
