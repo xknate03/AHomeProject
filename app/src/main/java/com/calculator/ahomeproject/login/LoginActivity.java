@@ -15,7 +15,7 @@ import com.calculator.ahomeproject.main.MainActivity;
 import com.calculator.ahomeproject.signup.SignUpActivity;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
+// mama mo nat
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLoginLogin;
