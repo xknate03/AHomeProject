@@ -17,6 +17,7 @@ import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
 // mama mo nat
 // this is to try again
+//Test 2
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLoginLogin;
