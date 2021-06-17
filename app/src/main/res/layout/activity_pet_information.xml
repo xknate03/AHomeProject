@@ -13,7 +13,6 @@
         android:id="@+id/scroll_view_forAdoption"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/petInfo_toolbar"
         android:background="@color/white">
 
         <LinearLayout
