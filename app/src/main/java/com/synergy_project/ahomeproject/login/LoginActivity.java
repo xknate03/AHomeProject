@@ -15,7 +15,7 @@ import com.synergy_project.ahomeproject.main.MainActivity;
 import com.synergy_project.ahomeproject.signup.SignUpActivity;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
+//added
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLoginLogin;
