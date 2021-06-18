@@ -23,7 +23,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import org.jetbrains.annotations.NotNull;
-//qweiuqriuqyrquiyquiqyeqiwueyqweiuq
+//qweiuqriuqyrquiyquiqyeqiwueyqweiuqrewwer
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
