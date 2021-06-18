@@ -17,8 +17,6 @@
         <activity android:name="com.synergy_project.ahomeproject.main.homeFragment.PetInformation"></activity>
         <activity android:name="com.synergy_project.ahomeproject.main.postFragment.ForAdoption" />
         <activity android:name="com.synergy_project.ahomeproject.main.postFragment.PostSomething" />
-        <activity android:name=".main.post.Post" />
-        <activity android:name=".main.profile.Profile" />
         <activity android:name="com.synergy_project.ahomeproject.main.MainActivity" />
         <activity android:name="com.synergy_project.ahomeproject.signup.SignUpActivity" />
         <activity android:name="com.synergy_project.ahomeproject.login.LoginActivity">
