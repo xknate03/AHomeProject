@@ -23,9 +23,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import org.jetbrains.annotations.NotNull;
-//Commit And Push
-//commit
-//comment
+
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
@@ -99,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.ic_post:
                         bottomNavigationView.setVisibility(View.VISIBLE);
                         selectedFragment= new PostFragment();
-
                         break;
                     case R.id.ic_notifs:
                         bottomNavigationView.setVisibility(View.VISIBLE);

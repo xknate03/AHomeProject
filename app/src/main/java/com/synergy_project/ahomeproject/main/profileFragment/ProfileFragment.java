@@ -104,7 +104,7 @@ public class ProfileFragment extends Fragment {
         String prof_bio = prefs.getString("prof_bio", "Profile Bio");
         String prof_loc = prefs.getString("prof_loc", "Profile Location");
 
-
+        //Default for new User
         txtName_profile_fragment.setText(prof_name);
         txtUsername_profile_fragment.setText(prof_user);
         txtBio_profile_fragment.setText(prof_bio);
