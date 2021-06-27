@@ -11,14 +11,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.synergy_project.ahomeproject.R;
 import com.synergy_project.ahomeproject.main.MainActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
+
 import org.jetbrains.annotations.NotNull;
 
 
@@ -26,9 +29,13 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
     EditText edtTextName_dialog_profile, edtTextUsername_dialog_profile, edtTextLocation_dialog_profile, edtTextBio_dialog_profile;
     TextView txtSave_dialog_profile, txtCancel_dialog_profile;
+    static SharedPreferences prefs;
+
     public interface OnInputListener {
         void updateName(String input);
+
         void updateLocation(String input);
+
         void updateBio(String input);
     }
 
@@ -48,6 +55,12 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         txtSave_dialog_profile = view.findViewById(R.id.txtSave_dialog_profile);
         txtCancel_dialog_profile = view.findViewById(R.id.txtCancel_dialog_profile);
 
+        //set old data
+        prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        edtTextName_dialog_profile.setText(prefs.getString("prof_name", "Profile name"));
+        edtTextLocation_dialog_profile.setText(prefs.getString("prof_bio", "Profile Bio"));
+        edtTextBio_dialog_profile.setText(prefs.getString("prof_loc", "Profile Location"));
+
         txtSave_dialog_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +68,7 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
                 String updateLocation = edtTextLocation_dialog_profile.getText().toString();
                 String updateBio = edtTextBio_dialog_profile.getText().toString();
 
-                if(!updateName.equals("") && !updateLocation.equals("") && !updateBio.equals("")) {
+                if (!updateName.equals("") && !updateLocation.equals("") && !updateBio.equals("")) {
                     //tasks
                     // 1. update database
                     // 2. reflect back to the page
@@ -76,12 +89,13 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
                                 object.put("location", updateLocation);
                                 object.put("bio", updateBio);
                                 object.saveInBackground(e1 -> {
-                                    if(e1 ==null) {
-                                        FancyToast.makeText(getContext(),"Profile updated", FancyToast.LENGTH_LONG,
-                                                FancyToast.SUCCESS,false).show();
+                                    if (e1 == null) {
+                                        FancyToast.makeText(getContext(), "Profile updated", FancyToast.LENGTH_LONG,
+                                                FancyToast.SUCCESS, false).show();
                                         dismiss();
-                                    }else {
+                                    } else {
                                     }
+
                                 });
 //
                             } else {
@@ -92,16 +106,16 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
                     });
 
                     //passing new value
-                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("prof_name", updateName);
                     editor.putString("prof_bio", updateBio);
                     editor.putString("prof_loc", updateLocation);
                     editor.apply();
 
-                }else {
+                } else {
                     FancyToast.makeText(getContext(), "Fields cannot be left blank", FancyToast.LENGTH_LONG,
-                            FancyToast.ERROR,false).show();
+                            FancyToast.ERROR, false).show();
                 }
 
             }
@@ -122,14 +136,12 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
     }
 
 
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
             onInputListener = (OnInputListener) getActivity();
-        }catch(ClassCastException e) {
+        } catch (ClassCastException e) {
             Log.e("TAG", "onAttach: ClassCastException: " + e.getMessage());
         }
     }
