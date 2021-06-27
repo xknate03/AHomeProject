@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.synergy_project.ahomeproject.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -57,8 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
 
-            txtBookTitle = (TextView) itemView.findViewById(R.id.txtBookTitle_cardView);
-            imgBook_cardView = (ImageView) itemView.findViewById(R.id.imgBook_cardView);
+            txtBookTitle = itemView.findViewById(R.id.txtBookTitle_cardView);
+            imgBook_cardView = itemView.findViewById(R.id.imgBook_cardView);
         }
     }
 }

@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 import com.synergy_project.ahomeproject.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -60,19 +61,14 @@ public class HomeFragment extends Fragment {
         bookList.add(new Book("Tiny", "Dog", "Description", R.drawable.tiny));
 
 
-        RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView_fragment_home);
+        RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_home);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), bookList);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
 
         //for opening the pet information activity
         btnSample = v.findViewById(R.id.btnSample);
-        btnSample.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), PetInformation.class));
-            }
-        });
+        btnSample.setOnClickListener(v1 -> startActivity(new Intent(getContext(), PetInformation.class)));
 
 
 

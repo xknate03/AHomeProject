@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.synergy_project.ahomeproject.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FirstFragment#newInstance} factory method to

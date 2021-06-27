@@ -9,10 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.login.LoginActivity;
 import com.synergy_project.ahomeproject.main.MainActivity;
 import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
-import com.synergy_project.ahomeproject.signup.SignUpActivity;
 
 public class PetInformation extends AppCompatActivity implements View.OnClickListener {
     ImageView petImage_petInfo_activity;
