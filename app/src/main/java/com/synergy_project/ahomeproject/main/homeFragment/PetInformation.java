@@ -5,13 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.synergy_project.ahomeproject.R;
+import com.synergy_project.ahomeproject.login.LoginActivity;
 import com.synergy_project.ahomeproject.main.MainActivity;
+import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
+import com.synergy_project.ahomeproject.signup.SignUpActivity;
 
-public class PetInformation extends AppCompatActivity {
+public class PetInformation extends AppCompatActivity implements View.OnClickListener {
     ImageView petImage_petInfo_activity;
+    Button btnChat;
     boolean isImageFitToScreen;
 
     @Override
@@ -20,7 +25,9 @@ public class PetInformation extends AppCompatActivity {
         setContentView(R.layout.activity_pet_information);
 
         petImage_petInfo_activity = findViewById(R.id.petImage_petInfo_activity);
+        btnChat = findViewById(R.id.btnSample);
 
+        btnChat.setOnClickListener(this);
 //        if (isImageFitToScreen) {
 //            isImageFitToScreen = false;
 //            petImage_petInfo_activity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -32,7 +39,10 @@ public class PetInformation extends AppCompatActivity {
 //        }
 
     }
-
+    public void onClick(View v) {
+        Intent intent = new Intent(PetInformation.this, ChatBox.class);
+        startActivity(intent);
+    }
 
     public void goBack(View view) {
         startActivity(new Intent(this, MainActivity.class));
