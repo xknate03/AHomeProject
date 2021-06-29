@@ -12,4 +12,18 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_name">User name</string>
+
+    <string-array name="notif_desc">
+        <item>"You posted on your wall"</item>
+        <item>"Joined Dog Lovers"</item>
+        <item>"You Succesfully registered!"</item>
+        <item>"Thank You! Welcome to A Home. Let's help each other!"</item>
+    </string-array>
+
+    <string-array name="Notif_time">
+        <item>2 hours ago</item>
+        <item>5 hours ago</item>
+        <item>12 hours ago</item>
+        <item>15 hours ago</item>
+    </string-array>
 </resources>

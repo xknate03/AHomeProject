@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.synergy_project.ahomeproject.R;
@@ -15,10 +18,24 @@ import com.synergy_project.ahomeproject.R;
 import org.jetbrains.annotations.NotNull;
 
 public class NotifsFragment extends Fragment {
+
+    String[] notif, time;
+    int [] image = {R.drawable.emma,R.drawable.emma, R.drawable.emma, R.drawable.ahome_logo};
+
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notifs, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_notifs, container, false);
+
+        notif=getResources().getStringArray(R.array.notif_desc);
+        time=getResources().getStringArray(R.array.Notif_time);
+
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView_fragment_notif);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        recyclerView.setAdapter(new NotifListAdapter(notif, time, image));
+
+
+        return view;
     }
 }
