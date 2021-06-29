@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 public class NotifsFragment extends Fragment {
 
     String[] notif, time;
-    int [] image = {R.drawable.emma,R.drawable.emma, R.drawable.emma, R.drawable.ahome_logo};
+    int [] image = {R.drawable.emma,R.drawable.emma, R.drawable.emma, R.drawable.a_home_logo};
 
     @Nullable
     @org.jetbrains.annotations.Nullable

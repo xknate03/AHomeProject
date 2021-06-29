@@ -12,6 +12,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_name">User name</string>
+    <string name="email_username">Email / Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="register">Register</string>
+    <string name="forgot_password">Forgot password?</string>
 
     <string-array name="notif_desc">
         <item>"You posted on your wall"</item>
@@ -26,4 +31,23 @@
         <item>12 hours ago</item>
         <item>15 hours ago</item>
     </string-array>
+
+    <string-array name="timeStamp">
+        <item>4 hours ago</item>
+        <item>4 hours ago</item>
+
+    </string-array>
+
+    <string-array name="name1">
+        <item>Emma Watson</item>
+        <item>Emma Watson</item>
+    </string-array>
+
+    <string-array name="postContent">
+        <item>The boy is in the house. I shall call him Bob.  Here some pictures of how adorable he is</item>
+        <item>Let us spread love and help animals in the streets as this app is dedicated to them let us feed them with what we have</item>
+
+    </string-array>
+
+
 </resources>

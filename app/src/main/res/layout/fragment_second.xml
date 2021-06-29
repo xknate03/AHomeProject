@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.profileFragment.SecondFragment">
+    tools:context=".main.profileFragment.listing.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Second Fragment"
-        android:textSize="30sp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="You have not listed anything yet"
+        android:textSize="30sp" />
 
 </FrameLayout>

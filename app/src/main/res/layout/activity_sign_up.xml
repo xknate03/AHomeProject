@@ -46,7 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@drawable/edittextformat"
+        android:background="@drawable/edit_text_format"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Email"
@@ -62,7 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edittextformat"
+        android:background="@drawable/edit_text_format"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Password"
@@ -78,7 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edittextformat"
+        android:background="@drawable/edit_text_format"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Retype password"
@@ -93,7 +93,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edittextformat"
+        android:background="@drawable/edit_text_format"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Full Name"
@@ -109,7 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="@drawable/edittextformat"
+        android:background="@drawable/edit_text_format"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Username"
@@ -139,6 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ahome_logo" />
+        app:srcCompat="@drawable/a_home_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

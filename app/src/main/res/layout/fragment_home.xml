@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:background="@drawable/edittextformat"
+            android:background="@drawable/edit_text_format"
             android:hint="Search here"
             android:padding="7dp"
             android:paddingStart="20dp"

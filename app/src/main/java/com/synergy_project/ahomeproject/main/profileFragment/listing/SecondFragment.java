@@ -1,4 +1,4 @@
-package com.synergy_project.ahomeproject.main.profileFragment;
+package com.synergy_project.ahomeproject.main.profileFragment.listing;
 
 import android.os.Bundle;
 

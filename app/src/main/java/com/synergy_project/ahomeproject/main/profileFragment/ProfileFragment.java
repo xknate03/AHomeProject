@@ -72,7 +72,7 @@ public class ProfileFragment extends Fragment {
         //for swipe refresh
         swipe_refresh = v.findViewById(R.id.swipe_refresh);
 
-        imgpImage_profile = v.findViewById(R.id.imgpImage_profile);
+        imgpImage_profile = v.findViewById(R.id.rows_imgProfile);
 
 
 

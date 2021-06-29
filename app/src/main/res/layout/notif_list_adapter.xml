@@ -11,11 +11,12 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="300dp"
-            android:layout_height="75dp">
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="@drawable/notify">
 
             <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/notifImg"
+                android:id="@+id/notifImg"
                 android:layout_width="61dp"
                 android:layout_height="59dp"
                 android:layout_marginStart="16dp"
@@ -28,24 +29,25 @@
                 android:id="@+id/notifText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="124dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/timeText"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toEndOf="@+id/notifImg"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/timeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="9dp"
+                android:layout_marginTop="10dp"
                 android:text="TextView"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.098"
+                app:layout_constraintStart_toEndOf="@+id/notifImg"
                 app:layout_constraintTop_toBottomOf="@+id/notifText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
