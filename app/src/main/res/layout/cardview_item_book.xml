@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/cardView"
+    android:id="@+id/mainLayout_cardView"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
     android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/imgBook_cardView"
+            android:id="@+id/imgPetImage"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="67"
@@ -25,7 +25,7 @@
 
         <TextView
             android:padding="10dp"
-            android:id="@+id/txtBookTitle_cardView"
+            android:id="@+id/txtPetName_cardView"
             android:textColor="#2d2d2d"
             android:textSize="20sp"
             android:textStyle="bold"

@@ -27,8 +27,10 @@ import java.util.List;
 public class HomeFragment extends Fragment {
     EditText edtSearchBar_home_fragment;
     RecyclerView dataList_fragmentHome;
-    List<Book> bookList;
-    Button btnSample;
+    String[] petName, petType, description, petSex, petStatus;
+    String[] petAge, petColor, petLocation;
+    int[] petImage = {R.drawable.bella, R.drawable.browny, R.drawable.george, R.drawable.jake, R.drawable.max, R.drawable.tiny};
+//    Button btnSample;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -46,29 +48,22 @@ public class HomeFragment extends Fragment {
 
 
         //for recyclerView
-        bookList = new ArrayList<>();
-        bookList.add(new Book("Bella", "Cat", "Description", R.drawable.bella));
-        bookList.add(new Book("Browny", "Dog", "Description", R.drawable.browny));
-        bookList.add(new Book("George", "Cat", "Description", R.drawable.george));
-        bookList.add(new Book("Jake", "Dog", "Description", R.drawable.jake));
-        bookList.add(new Book("Max", "Dog", "Description", R.drawable.max));
-        bookList.add(new Book("Tiny", "Dog", "Description", R.drawable.tiny));
-        bookList.add(new Book("Bella", "Cat", "Description", R.drawable.bella));
-        bookList.add(new Book("Browny", "Dog", "Description", R.drawable.browny));
-        bookList.add(new Book("George", "Cat", "Description", R.drawable.george));
-        bookList.add(new Book("Jake", "Dog", "Description", R.drawable.jake));
-        bookList.add(new Book("Max", "Dog", "Description", R.drawable.max));
-        bookList.add(new Book("Tiny", "Dog", "Description", R.drawable.tiny));
+        petName = getResources().getStringArray(R.array.petNames);
+        petType = getResources().getStringArray(R.array.petType);
+        description = getResources().getStringArray(R.array.description);
+        petSex = getResources().getStringArray(R.array.petSex);
+        petStatus = getResources().getStringArray(R.array.petStatus);
+        petAge = getResources().getStringArray(R.array.petAge);
+        petColor = getResources().getStringArray(R.array.petColor);
+        petLocation = getResources().getStringArray(R.array.petLocation);
 
 
         RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_home);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), bookList);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), petName, petType,
+                description, petImage, petSex, petStatus, petAge, petColor, petLocation);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
 
-        //for opening the pet information activity
-        btnSample = v.findViewById(R.id.btnSample);
-        btnSample.setOnClickListener(v1 -> startActivity(new Intent(getContext(), PetInformation.class)));
 
 
 

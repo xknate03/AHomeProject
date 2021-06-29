@@ -46,8 +46,87 @@
     <string-array name="postContent">
         <item>The boy is in the house. I shall call him Bob.  Here some pictures of how adorable he is</item>
         <item>Let us spread love and help animals in the streets as this app is dedicated to them let us feed them with what we have</item>
-
     </string-array>
+
+    <string-array name="petNames">
+        <item>Bella</item>
+        <item>Browny</item>
+        <item>George</item>
+        <item>Jake</item>
+        <item>Max</item>
+        <item>Tiny</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>This is Bella</item>
+        <item>This is Browny</item>
+        <item>This is George</item>
+        <item>This is Jake</item>
+        <item>This is Max</item>
+        <item>This is Tiny</item>
+    </string-array>
+
+    <string-array name="petSex">
+        <item>Female</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+
+
+    <string-array name="petType">
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Dog</item>
+        <item>Dog</item>
+    </string-array>
+
+    <string-array name="petStatus">
+        <item>Adoptable</item>
+        <item>Adoptable</item>
+        <item>Not Adoptable</item>
+        <item>Adoptable</item>
+        <item>Adoptable</item>
+        <item>Not Adoptable</item>
+    </string-array>
+
+    <string-array name="petAge">
+        <item>1 year</item>
+        <item>2 years</item>
+        <item>5 months</item>
+        <item>11 months</item>
+        <item>2 years</item>
+        <item>8 months</item>
+    </string-array>
+
+    <string-array name="petColor">
+        <item>Black</item>
+        <item>Black</item>
+        <item>Black</item>
+        <item>Black</item>
+        <item>Black</item>
+        <item>Black</item>
+    </string-array>
+
+    <string-array name="petLocation">
+        <item>Manila, Metro Manila</item>
+        <item>Quezon City, Metro Manila</item>
+        <item>Pampanga</item>
+        <item>Lipa City, Batangas</item>
+        <item>Antipolo, Rizal</item>
+        <item>San Mateo, Rizal</item>
+    </string-array>
+
+
+
+
+
+
 
 
 </resources>
