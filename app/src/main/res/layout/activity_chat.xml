@@ -30,8 +30,6 @@
         tools:layout_editor_absoluteY="-134dp">
 
     </ListView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

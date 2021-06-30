@@ -34,7 +34,6 @@
             android:layout_weight="33"
             android:text="Book Title"/>
 
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

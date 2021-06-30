@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
         petLocation = getResources().getStringArray(R.array.petLocation);
 
 
-        RecyclerView recyclerView =  v.findViewById(R.id.recyclerView_fragment_home);
+        RecyclerView recyclerView = v.findViewById(R.id.recyclerView_fragment_home);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), petName, petType,
                 description, petImage, petSex, petStatus, petAge, petColor, petLocation);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));

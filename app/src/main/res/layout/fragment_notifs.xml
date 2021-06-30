@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/fragmentHome_toolbar"
@@ -32,7 +32,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="40dp"
@@ -56,47 +55,38 @@
                 app:srcCompat="@drawable/ic_chat" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
     </androidx.appcompat.widget.Toolbar>
 
-
     <TextView
-        android:layout_below="@+id/fragmentHome_toolbar"
         android:id="@+id/fragment_notifs_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notifications"
-        android:textStyle="bold"
-        android:textSize="30sp"
+        android:layout_below="@+id/fragmentHome_toolbar"
         android:fontFamily="@font/montserrat"
-        android:textColor="#363636"
-        android:paddingStart="10dp"
         android:padding="5dp"
-        />
-
+        android:paddingStart="10dp"
+        android:text="Notifications"
+        android:textColor="#363636"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fragment_notifs_title">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/fragment_notifs_title"
             android:layout_marginTop="10dp">
 
-
-
             <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView_fragment_notif"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                android:id="@+id/recyclerView_fragment_notif"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-
-
 
 </RelativeLayout>

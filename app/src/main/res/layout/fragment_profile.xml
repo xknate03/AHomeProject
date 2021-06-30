@@ -45,7 +45,6 @@
                 app:srcCompat="@drawable/ic_paw" />
 
 
-
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="40dp"
@@ -59,11 +58,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
-
     </androidx.appcompat.widget.Toolbar>
-
 
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -71,124 +66,122 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fragment_toolbar">
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/fragment_toolbar"
-        android:layout_marginTop="-1dp"
-        android:layout_marginBottom="1dp"
-        android:background="@color/white">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fragment_toolbar"
+            android:layout_marginTop="-1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/rows_imgProfile"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/emma"
-                app:civ_border_color="#555e5d"
-                app:civ_border_width="2dp"
-                app:layout_constraintEnd_toStartOf="@+id/txtBio_profile_fragment"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtBio_profile_fragment"
-                android:layout_width="261dp"
-                android:layout_height="96dp"
-                android:layout_marginTop="12dp"
-                android:background="#FFFFFF"
-                android:fontFamily="@font/montserrat"
-                android:padding="5dp"
-                android:text="Update your Bio"
-                android:textColor="#000000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/rows_imgProfile"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txtName_profile_fragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="15dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Full Name"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rows_imgProfile" />
-
-
-            <TextView
-                android:id="@+id/txtUsername_profile_fragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="6dp"
-                android:fontFamily="@font/montserrat"
-                android:text="\@username"
-                android:textColor="#171717"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtName_profile_fragment" />
-
-            <TextView
-                android:id="@+id/txtLocation_profile_fragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="6dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Location"
-                android:textColor="#171717"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUsername_profile_fragment" />
-
-            <Button
-                android:id="@+id/btnEditProfile_profile_fragment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="10dp"
-                android:backgroundTint="#ED6C6C"
-                android:fontFamily="@font/montserrat"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:text="Edit Profile"
-                android:textAllCaps="false"
-                app:cornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtLocation_profile_fragment" />
-
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout_profile_fragment"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.526"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnEditProfile_profile_fragment" />
+                android:layout_height="wrap_content">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager_profile_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/tabLayout_profile_fragment"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rows_imgProfile"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/emma"
+                    app:civ_border_color="#555e5d"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtBio_profile_fragment"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtBio_profile_fragment"
+                    android:layout_width="261dp"
+                    android:layout_height="96dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:padding="5dp"
+                    android:text="Update your Bio"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/rows_imgProfile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtName_profile_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Full Name"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rows_imgProfile" />
 
 
-    </ScrollView>
+                <TextView
+                    android:id="@+id/txtUsername_profile_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="\@username"
+                    android:textColor="#171717"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtName_profile_fragment" />
+
+                <TextView
+                    android:id="@+id/txtLocation_profile_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Location"
+                    android:textColor="#171717"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtUsername_profile_fragment" />
+
+                <Button
+                    android:id="@+id/btnEditProfile_profile_fragment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="#ED6C6C"
+                    android:fontFamily="@font/montserrat"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Edit Profile"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLocation_profile_fragment" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayout_profile_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.526"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnEditProfile_profile_fragment" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager_profile_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tabLayout_profile_fragment" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

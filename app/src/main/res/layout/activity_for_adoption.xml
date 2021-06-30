@@ -25,14 +25,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-
     <ScrollView
         android:id="@+id/scroll_view_forAdoption"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/forAdoption_toolbar"
         android:background="@color/white">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -256,6 +254,5 @@
         android:text="List it!"
         android:textAllCaps="false"
         app:cornerRadius="20dp" />
-
 
 </RelativeLayout>

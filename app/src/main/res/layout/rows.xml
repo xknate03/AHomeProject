@@ -67,10 +67,7 @@
                     android:textColor="#464646" />
             </LinearLayout>
 
-
-
         </LinearLayout>
-
 
             <TextView
                 android:id="@+id/rows_postContent"
@@ -78,9 +75,6 @@
                 android:layout_height="wrap_content"
                 android:text="Body here"
                 android:textColor="#464646" />
-
-
-
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
