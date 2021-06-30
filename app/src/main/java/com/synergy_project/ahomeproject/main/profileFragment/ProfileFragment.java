@@ -3,6 +3,7 @@ package com.synergy_project.ahomeproject.main.profileFragment;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -42,11 +43,12 @@ public class ProfileFragment extends Fragment {
     TabLayout tabLayout_profile_fragment;
     ViewPager2 viewPager_profile_fragment;
     FragmentAdapter adapter;
-    Button btnEditProfile_profile_fragment;
+    Button btnEditProfile_profile_fragment, btnChat_fragProfile;
     SwipeRefreshLayout swipe_refresh;
     SharedPreferences prefs;
     CircleImageView imgpImage_profile;
     Uri imageUri;
+
     @Nullable
     @org.jetbrains.annotations.Nullable
     @Override
@@ -54,6 +56,7 @@ public class ProfileFragment extends Fragment {
             ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        //buttons
         //Text Views
         txtBio_profile_fragment = v.findViewById(R.id.txtBio_profile_fragment);
         txtName_profile_fragment = v.findViewById(R.id.txtName_profile_fragment);
@@ -64,16 +67,15 @@ public class ProfileFragment extends Fragment {
         btnEditProfile_profile_fragment = v.findViewById(R.id.btnEditProfile_profile_fragment);
         fragment_toolbar = v.findViewById(R.id.fragment_toolbar);
         //for tab layout
-        tabLayout_profile_fragment =    v.findViewById(R.id.tabLayout_profile_fragment);
+        tabLayout_profile_fragment = v.findViewById(R.id.tabLayout_profile_fragment);
         viewPager_profile_fragment = v.findViewById(R.id.viewPager_profile_fragment);
-        FragmentManager fm = ((AppCompatActivity)getActivity()).getSupportFragmentManager();
+        FragmentManager fm = ((AppCompatActivity) getActivity()).getSupportFragmentManager();
         adapter = new FragmentAdapter(fm, getLifecycle());
         viewPager_profile_fragment.setAdapter(adapter);
         //for swipe refresh
         swipe_refresh = v.findViewById(R.id.swipe_refresh);
 
         imgpImage_profile = v.findViewById(R.id.rows_imgProfile);
-
 
 
         //adding tabLayout tab names
@@ -89,9 +91,9 @@ public class ProfileFragment extends Fragment {
         });
 
         //for toolbar
-        if(fragment_toolbar != null) {
-            ((AppCompatActivity)getActivity()).setSupportActionBar(fragment_toolbar);
-            ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        if (fragment_toolbar != null) {
+            ((AppCompatActivity) getActivity()).setSupportActionBar(fragment_toolbar);
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
         String usernameWithAt = "@" + ParseUser.getCurrentUser().getUsername();
@@ -114,7 +116,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DialogFragment dialogFragment = new DialogFragment();
-                dialogFragment.show(((AppCompatActivity)getActivity()).getSupportFragmentManager(), "Dialog");
+                dialogFragment.show(((AppCompatActivity) getActivity()).getSupportFragmentManager(), "Dialog");
             }
         });
 
@@ -143,11 +145,9 @@ public class ProfileFragment extends Fragment {
         });
 
 
-
         return v;
     }
     // end of onCreateView method
-
 
 
     // for getting images from gallery for uploading
@@ -180,12 +180,11 @@ public class ProfileFragment extends Fragment {
     }
 
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == 100 && data != null) {
+        if (requestCode == 100 && data != null) {
             imageUri = data.getData();
             imgpImage_profile.setImageURI(imageUri);
         }
@@ -218,7 +217,6 @@ public class ProfileFragment extends Fragment {
             }
         });
     }
-
 
 
 

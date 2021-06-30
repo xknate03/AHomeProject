@@ -1,42 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.chatFragment.ChatBox">
+    tools:context=".main.chatFragment.ChatBox"
+    android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_chatList_toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />
+        android:background="@color/main"
+        android:padding="0dp"
+        android:theme="@style/ToolbarColoredBackArrow"
+        app:titleMarginStart="40dp">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="280dp"
-        android:layout_height="57dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Enter Text"
-        android:inputType="textShortMessage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="407dp"
-        android:layout_height="666dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="goBack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/txtUsername_activity_chatBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/coustard"
+                android:text="Username"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgBack"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="5dp">
+        <TextView
+            android:id="@+id/txtChatBody"
+            android:layout_width="407dp"
+            android:layout_height="666dp"
+            android:text="Text here"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textColor="#333333"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/main"
+            android:onClick="sendChat"
+            android:text="Send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.567"
+            app:layout_constraintStart_toEndOf="@+id/edtChatInput" />
+
+        <EditText
+            android:id="@+id/edtChatInput"
+            android:layout_width="280dp"
+            android:layout_height="57dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:hint="Enter Message"
+            android:inputType="textShortMessage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

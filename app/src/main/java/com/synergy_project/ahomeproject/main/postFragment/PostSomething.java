@@ -24,7 +24,7 @@ public class PostSomething extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        startActivity(new Intent(PostSomething.this, MainActivity.class));
+        this.finish();
     }
 
     public void postSomething(View view) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -12,41 +13,48 @@
         android:theme="@style/ToolbarColoredBackArrow"
         app:titleMarginStart="40dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtSearchBar_home_fragment"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
                 android:background="@drawable/edit_text_format"
                 android:hint="Search here"
                 android:padding="7dp"
                 android:paddingStart="20dp"
                 android:paddingLeft="20dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button2"
+
+            <ImageView
+                android:id="@+id/imageView8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/ic_paw" />
+                android:layout_marginEnd="28dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_paw" />
 
-            <Button
-                android:id="@+id/button3"
+            <ImageView
+                android:id="@+id/imageView9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/ic_chat" />
-        </LinearLayout>
+                android:layout_marginEnd="12dp"
+                android:onClick="openChatActivity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_chat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -60,26 +68,34 @@
         android:layout_height="wrap_content"
         android:text="Notifications"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:fontFamily="@font/montserrat"
         android:textColor="#363636"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd = "10dp"
-        android:layout_marginTop="10dp"
+        android:paddingStart="10dp"
+        android:padding="5dp"
         />
-    <LinearLayout
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/fragment_notifs_title"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_notifs_title">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fragment_notifs_title"
+            android:layout_marginTop="10dp">
 
 
 
-        <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView_fragment_notif"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_fragment_notif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
 

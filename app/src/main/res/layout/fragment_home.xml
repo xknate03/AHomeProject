@@ -12,46 +12,59 @@
         android:theme="@style/ToolbarColoredBackArrow"
         app:titleMarginStart="40dp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/edtSearchBar_home_fragment"
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
                 android:background="@drawable/edit_text_format"
                 android:hint="Search here"
                 android:padding="7dp"
                 android:paddingStart="20dp"
                 android:paddingLeft="20dp"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/button2"
+
+            <ImageView
+                android:id="@+id/imageView8"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/ic_paw" />
+                android:layout_marginEnd="28dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_paw" />
 
-            <Button
-                android:id="@+id/chatList_Btn"
+            <ImageView
+                android:id="@+id/imageView9"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/ic_chat" />
-        </LinearLayout>
+                android:layout_marginEnd="12dp"
+                android:onClick="openChatActivity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_chat" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
     </androidx.appcompat.widget.Toolbar>
 
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragmentHome_toolbar">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,6 +83,8 @@
 
 
     </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
 

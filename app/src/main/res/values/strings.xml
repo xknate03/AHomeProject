@@ -17,6 +17,7 @@
     <string name="log_in">Log In</string>
     <string name="register">Register</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="chat">Chat</string>
 
     <string-array name="notif_desc">
         <item>"You posted on your wall"</item>

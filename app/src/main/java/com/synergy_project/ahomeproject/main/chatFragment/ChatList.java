@@ -19,23 +19,24 @@ import java.util.ArrayList;
 public class ChatList extends AppCompatActivity {
     ListView listView;
     ArrayAdapter arrayAdapter;
+    ArrayList<String> array;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
 
         listView = findViewById(R.id.my_listView);
-        ArrayList<String> array = new ArrayList<>();
+         array = new ArrayList<>();
 
 
-        array.add("Username1");
-        array.add("Username2");
-        array.add("Username3");
-        array.add("Username4");
-        array.add("Username5");
-        array.add("Username6");
-        array.add("Username7");
-        array.add("Username8");
+        array.add("Liam");
+        array.add("Noah");
+        array.add("Oliver");
+        array.add("Elijah");
+        array.add("William");
+        array.add("James");
+        array.add("Sophia");
+        array.add("Isabella");
 
 
 
@@ -48,15 +49,19 @@ public class ChatList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(ChatList.this, "Clicked Item"+array.get(position).toString(), Toast.LENGTH_SHORT).show();
-                openActivity();
+                openActivity(position);
             }
         });
 
     }
 
-    private void openActivity() {
+    private void openActivity(int position) {
         Intent intent = new Intent(this, ChatBox.class);
+        intent.putExtra("user_name", array.get(position));
         startActivity(intent);
     }
 
+    public void goBack(View view) {
+        this.finish();
+    }
 }

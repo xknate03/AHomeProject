@@ -13,8 +13,9 @@ import android.widget.Toast;
 import com.synergy_project.ahomeproject.R;
 import com.synergy_project.ahomeproject.main.MainActivity;
 import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
+import com.synergy_project.ahomeproject.main.chatFragment.ChatList;
 
-public class PetInformation extends AppCompatActivity implements View.OnClickListener {
+public class PetInformation extends AppCompatActivity {
     ImageView petImage_petInfo_activity;
     TextView txtPetName_petInfo_activity, txtPetSex_petInfo_activity, txtPetType_petInfo_activity;
     TextView txtPetStatus_petInfo_activity, txtPetAge_petInfo_activity, txtPetColor_petInfo_activity;
@@ -22,7 +23,6 @@ public class PetInformation extends AppCompatActivity implements View.OnClickLis
     String petName, petType, petSex, petStatus, petDescription;
     String petAge, petColor, petLocation;
     int petImage;
-    Button btnChat;
     boolean isImageFitToScreen;
 
     @Override
@@ -42,26 +42,10 @@ public class PetInformation extends AppCompatActivity implements View.OnClickLis
 
         getData();
         setData();
-        btnChat = findViewById(R.id.btnSample);
-
-        btnChat.setOnClickListener(this);
-//        if (isImageFitToScreen) {
-//            isImageFitToScreen = false;
-//            petImage_petInfo_activity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-//            petImage_petInfo_activity.setAdjustViewBounds(true);
-//        } else {
-//            isImageFitToScreen = true;
-//            petImage_petInfo_activity.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-//            petImage_petInfo_activity.setScaleType(ImageView.ScaleType.FIT_XY);
-//        }
-
 
 
     }
-    public void onClick(View v) {
-        Intent intent = new Intent(this, ChatBox.class);
-        startActivity(intent);
-    }
+
 
     public void goBack(View view) {
         startActivity(new Intent(this, MainActivity.class));
@@ -97,8 +81,14 @@ public class PetInformation extends AppCompatActivity implements View.OnClickLis
         txtPetLocation_petInfo_activity.setText(String.format("Location: %s", petLocation));
         txtPetDescription_petInfo_activity.setText(petDescription);
 
-
-
     }
 
+    public void openChatActivity(View view) {
+        Intent intent = new Intent(this, ChatList.class);
+        startActivity(intent);
+    }
+
+    public void goBackToMain(View view) {
+        this.finish();
+    }
 }

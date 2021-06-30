@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 import com.synergy_project.ahomeproject.R;
@@ -21,6 +22,7 @@ public class NotifsFragment extends Fragment {
 
     String[] notif, time;
     int [] image = {R.drawable.emma,R.drawable.emma, R.drawable.emma, R.drawable.a_home_logo};
+    SwipeRefreshLayout swipe_refresh;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -34,7 +36,13 @@ public class NotifsFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView_fragment_notif);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setAdapter(new NotifListAdapter(notif, time, image));
-
+        swipe_refresh = view.findViewById(R.id.swipe_refresh);
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipe_refresh.setRefreshing(false);
+            }
+        });
 
         return view;
     }

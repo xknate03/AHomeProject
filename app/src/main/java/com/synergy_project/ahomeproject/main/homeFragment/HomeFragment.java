@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 import com.synergy_project.ahomeproject.R;
@@ -29,8 +30,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     EditText edtSearchBar_home_fragment;
-    Button chatBtn;
-    RecyclerView dataList_fragmentHome;
+    SwipeRefreshLayout swipe_refresh;
     String[] petName, petType, description, petSex, petStatus;
     String[] petAge, petColor, petLocation;
     int[] petImage = {R.drawable.bella, R.drawable.browny, R.drawable.george, R.drawable.jake, R.drawable.max, R.drawable.tiny};
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         edtSearchBar_home_fragment = v.findViewById(R.id.edtSearchBar_home_fragment);
-
+        swipe_refresh = v.findViewById(R.id.swipe_refresh);
         //setting size of the imageView programmatically
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -51,14 +51,7 @@ public class HomeFragment extends Fragment {
         edtSearchBar_home_fragment.setWidth(width);
 
         //buttons
-        chatBtn = v.findViewById(R.id.chatList_Btn);
-        chatBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeFragment.this.getActivity(), ChatList.class);
-                startActivity(intent);
-            }
-        });
+
 
         //for recyclerView
         petName = getResources().getStringArray(R.array.petNames);
@@ -76,6 +69,13 @@ public class HomeFragment extends Fragment {
                 description, petImage, petSex, petStatus, petAge, petColor, petLocation);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
+
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipe_refresh.setRefreshing(false);
+            }
+        });
 
 
         return v;

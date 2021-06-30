@@ -13,7 +13,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:background="@drawable/notify">
+            android:background="@drawable/notify"
+            android:paddingEnd="10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/notifImg"
