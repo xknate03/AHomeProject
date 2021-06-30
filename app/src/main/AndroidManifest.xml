@@ -14,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AHomeProject">
-        <activity android:name=".main.profileFragment.posts.Content"></activity>
         <activity android:name=".main.homeFragment.PetInformation" />
 
         <activity android:name=".main.chatFragment.ChatBox">

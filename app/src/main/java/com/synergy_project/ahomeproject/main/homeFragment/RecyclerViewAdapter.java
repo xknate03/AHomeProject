@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,11 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.main.profileFragment.posts.Content;
 
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 

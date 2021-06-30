@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/rows_imgProfile"
+                    android:id="@+id/imgProfile_rowGroup"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
                     android:layout_marginTop="12dp"
@@ -103,7 +103,7 @@
                     android:text="Update your Bio"
                     android:textColor="#000000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/rows_imgProfile"
+                    app:layout_constraintStart_toEndOf="@id/imgProfile_rowGroup"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -117,7 +117,7 @@
                     android:textColor="#000000"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rows_imgProfile" />
+                    app:layout_constraintTop_toBottomOf="@+id/imgProfile_rowGroup" />
 
 
                 <TextView

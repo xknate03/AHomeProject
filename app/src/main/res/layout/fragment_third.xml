@@ -22,6 +22,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/a_home_logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Synergy Group"
+                android:textColor="@color/main"
+                android:textSize="40sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,28 +39,33 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"
                 android:textColor="@color/black"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chavez, Nathaniel"
+                android:textColor="#222222"
                 android:textSize="25sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Asis, Patrick"
+                android:textColor="#222222"
                 android:textSize="25sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Reyes, Ruvic"
+                android:textColor="#222222"
                 android:textSize="25sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Valera, Janrey"
+                android:textColor="#222222"
                 android:textSize="25sp" />
 
         </LinearLayout>

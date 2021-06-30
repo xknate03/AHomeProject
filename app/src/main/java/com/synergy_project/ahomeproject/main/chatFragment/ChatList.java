@@ -1,6 +1,5 @@
 package com.synergy_project.ahomeproject.main.chatFragment;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,7 +22,7 @@ public class ChatList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_list);
+            setContentView(R.layout.activity_chat_list);
 
         listView = findViewById(R.id.my_listView);
          array = new ArrayList<>();
@@ -45,12 +44,9 @@ public class ChatList extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ChatList.this, "Clicked Item"+array.get(position).toString(), Toast.LENGTH_SHORT).show();
-                openActivity(position);
-            }
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Toast.makeText(ChatList.this, "Clicked Item"+array.get(position).toString(), Toast.LENGTH_SHORT).show();
+            openActivity(position);
         });
 
     }

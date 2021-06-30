@@ -36,13 +36,14 @@
     <string-array name="timeStamp">
         <item>4 hours ago</item>
         <item>4 hours ago</item>
-
     </string-array>
 
     <string-array name="name1">
         <item>Emma Watson</item>
         <item>Emma Watson</item>
     </string-array>
+
+
 
     <string-array name="postContent">
         <item>The boy is in the house. I shall call him Bob.  Here some pictures of how adorable he is</item>
@@ -122,6 +123,33 @@
         <item>Antipolo, Rizal</item>
         <item>San Mateo, Rizal</item>
     </string-array>
+
+
+
+
+<!--    for group fragment-->
+    <string-array name="group_users">
+        <item>Clinton Jeff</item>
+        <item>Hayley Williams</item>
+        <item>Nathaniel Chavez</item>
+        <item>Patrick Asis</item>
+    </string-array>
+
+    <string-array name="group_postContent">
+        <item>There will be a community pantry for the street at blah blah address. You can come and visit the place anytime. But you always need to wear your face mask and face shield.</item>
+        <item>Hope everyone is safe with your pets. Enjoy the rainy season.</item>
+        <item>This app is dedicated for those animals on the street. Let us unite together to help them. Let us observe good manners and proper language.</item>
+        <item>I just found my lost cat while using this app. This group has helped me with my journey finding my lost Kitty. Thanks to @emma for helping me with it.</item>
+    </string-array>
+
+
+    <string-array name="group_timeStamp">
+        <item>5 minutes ago</item>
+        <item>1 hour ago</item>
+        <item>2 hour ago</item>
+        <item>7 June 2021</item>
+    </string-array>
+
 
 
 

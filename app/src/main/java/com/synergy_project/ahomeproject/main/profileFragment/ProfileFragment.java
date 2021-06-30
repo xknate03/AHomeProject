@@ -3,7 +3,6 @@ package com.synergy_project.ahomeproject.main.profileFragment;
 import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -75,7 +74,7 @@ public class ProfileFragment extends Fragment {
         //for swipe refresh
         swipe_refresh = v.findViewById(R.id.swipe_refresh);
 
-        imgpImage_profile = v.findViewById(R.id.rows_imgProfile);
+        imgpImage_profile = v.findViewById(R.id.imgProfile_rowGroup);
 
 
         //adding tabLayout tab names
