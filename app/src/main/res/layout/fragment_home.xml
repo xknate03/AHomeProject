@@ -39,7 +39,7 @@
                 android:background="@drawable/ic_paw" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/chatList_Btn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentEnd="true"

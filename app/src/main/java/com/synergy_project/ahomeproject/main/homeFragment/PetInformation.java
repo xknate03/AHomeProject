@@ -57,11 +57,9 @@ public class PetInformation extends AppCompatActivity implements View.OnClickLis
 
 
 
-
-
     }
     public void onClick(View v) {
-        Intent intent = new Intent(PetInformation.this, ChatBox.class);
+        Intent intent = new Intent(this, ChatBox.class);
         startActivity(intent);
     }
 

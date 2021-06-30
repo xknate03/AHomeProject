@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.synergy_project.ahomeproject.R;
+import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
+import com.synergy_project.ahomeproject.main.chatFragment.ChatList;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -26,6 +29,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
     EditText edtSearchBar_home_fragment;
+    Button chatBtn;
     RecyclerView dataList_fragmentHome;
     String[] petName, petType, description, petSex, petStatus;
     String[] petAge, petColor, petLocation;
@@ -46,6 +50,15 @@ public class HomeFragment extends Fragment {
         int width = (int) (size.x * 0.65);
         edtSearchBar_home_fragment.setWidth(width);
 
+        //buttons
+        chatBtn = v.findViewById(R.id.chatList_Btn);
+        chatBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeFragment.this.getActivity(), ChatList.class);
+                startActivity(intent);
+            }
+        });
 
         //for recyclerView
         petName = getResources().getStringArray(R.array.petNames);
@@ -65,8 +78,8 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
 
-
-
         return v;
     }
+
+
 }
