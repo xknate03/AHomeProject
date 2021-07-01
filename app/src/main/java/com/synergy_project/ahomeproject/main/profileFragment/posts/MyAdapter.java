@@ -5,17 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.synergy_project.ahomeproject.R;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     String[] name, timeStamp, postContent;
     Context ct;
-    int[] images;
 
     public MyAdapter(Context ct, String[] name, String[] timeStamp, String[] postContent) {
         this.ct = ct;
@@ -23,7 +20,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.timeStamp = timeStamp;
         this.postContent = postContent;
     }
-
 
     @NonNull
 
@@ -37,12 +33,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         holder.rows_name.setText(name[position]);
-
         holder.rows_timeStamp.setText(timeStamp[position]);
         holder.rows_postContent.setText(postContent[position]);
-
-
-
     }
 
     @Override
@@ -53,7 +45,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView rows_name, rows_timeStamp, rows_postContent;
-//        ImageView imgImage;
         ConstraintLayout mainLayout;
 
         public MyViewHolder(View view) {

@@ -1,21 +1,13 @@
 package com.synergy_project.ahomeproject.main.profileFragment.posts;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.synergy_project.ahomeproject.R;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 
 /**
@@ -24,12 +16,9 @@ import java.io.InputStreamReader;
  * create an instance of this fragment.
  */
 
-
 public class FirstFragment extends Fragment {
 
     String[] name, timeStamp, postContent;
-//    String line, entireFile;
-;
     RecyclerView recyclerView;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -76,18 +65,10 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_first, container, false);
-
         recyclerView = view.findViewById(R.id.recyclerView);
         name = getResources().getStringArray(R.array.name1);
-
         timeStamp = getResources().getStringArray(R.array.timeStamp);
         postContent = getResources().getStringArray(R.array.postContent);
-
-        //desc = getResources().getStringArray(R.array.description);
-
-        //intialize desc[] below using the buffer
-
-
 
         MyAdapter myAdapter = new MyAdapter(getContext(), name, timeStamp,postContent);
         recyclerView.setAdapter(myAdapter);

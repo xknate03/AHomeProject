@@ -1,6 +1,5 @@
 package com.synergy_project.ahomeproject;
 import android.app.Application;
-
 import com.parse.Parse;
 
 public class App extends Application {

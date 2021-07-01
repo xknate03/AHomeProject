@@ -1,14 +1,12 @@
 package com.synergy_project.ahomeproject.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.synergy_project.ahomeproject.R;
 import com.synergy_project.ahomeproject.login.LoginActivity;
 import com.parse.ParseException;
@@ -48,7 +46,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 FancyToast.makeText(SignUpActivity.this, "matching: " + isMatching + " , valid: " + isPasswordValid,
                         FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();
                 if(isMatching && isPasswordValid) {
-
                     ParseUser user = new ParseUser();
                     ParseObject profile = new ParseObject("Profile");
                     // Set the user's username and password, which can be obtained by a forms
@@ -82,10 +79,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     });
                 }
                 break;
-
-
-
-
             case R.id.btnLoginSignUp:
                 transitionToLogin();
                 break;

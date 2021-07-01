@@ -4,17 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.synergy_project.ahomeproject.R;
-
 import org.jetbrains.annotations.NotNull;
 
 public class GroupsFragment extends Fragment {
@@ -22,11 +18,9 @@ public class GroupsFragment extends Fragment {
     String[] group_name, group_timeStamp, group_postContent;
     String[] group_discoverGroup, group_myGroups;
     RecyclerView fragment_groups_recyclerView, fragment_groups_recyclerView_horizontal, fragment_groups_recyclerView_horizontal2 ;
-    int[] images = new int[]{R.drawable.jake, R.drawable.george, R.drawable.browny,R.drawable.bella};
-
+    int[] images = new int[]{R.drawable.jeff, R.drawable.hayley, R.drawable.nat, R.drawable.pat};
     int[] group_myGroup_images = new int[]{R.drawable.dog_lovers};
     int[] group_Discover_images = new int[]{R.drawable.cat_lovers, R.drawable.dog_lovers};
-
 
     @Nullable
     @org.jetbrains.annotations.Nullable

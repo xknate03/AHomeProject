@@ -7,14 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import com.synergy_project.ahomeproject.R;
-
 import org.jetbrains.annotations.NotNull;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
@@ -46,7 +42,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         LayoutInflater mInflater = LayoutInflater.from(mContext);
         View view = mInflater.inflate(R.layout.cardview_item_book, parent, false);
         return new MyViewHolder(view);
-
     }
 
     @Override
@@ -66,7 +61,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             intent.putExtra("petLocation", petLocation[position]);
             intent.putExtra("description", description[position]);
 
-
             mContext.startActivity(intent);
         });
     }
@@ -80,7 +74,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView petName;
         ImageView petImage;
         CardView mainLayout_cardView;
-
 
         public MyViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);

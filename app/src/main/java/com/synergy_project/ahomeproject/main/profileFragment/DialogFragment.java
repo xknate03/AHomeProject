@@ -1,7 +1,6 @@
 package com.synergy_project.ahomeproject.main.profileFragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -11,12 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.main.MainActivity;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -27,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class DialogFragment extends androidx.fragment.app.DialogFragment {
 
-    EditText edtTextName_dialog_profile, edtTextUsername_dialog_profile, edtTextLocation_dialog_profile, edtTextBio_dialog_profile;
+    EditText edtTextName_dialog_profile, edtTextLocation_dialog_profile, edtTextBio_dialog_profile;
     TextView txtSave_dialog_profile, txtCancel_dialog_profile;
     static SharedPreferences prefs;
 
@@ -61,63 +57,52 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         edtTextLocation_dialog_profile.setText(prefs.getString("prof_bio", "Profile Bio"));
         edtTextBio_dialog_profile.setText(prefs.getString("prof_loc", "Profile Location"));
 
-        txtSave_dialog_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String updateName = edtTextName_dialog_profile.getText().toString();
-                String updateLocation = edtTextLocation_dialog_profile.getText().toString();
-                String updateBio = edtTextBio_dialog_profile.getText().toString();
+        txtSave_dialog_profile.setOnClickListener(v -> {
+            String updateName = edtTextName_dialog_profile.getText().toString();
+            String updateLocation = edtTextLocation_dialog_profile.getText().toString();
+            String updateBio = edtTextBio_dialog_profile.getText().toString();
 
-                if (!updateName.equals("") && !updateLocation.equals("") && !updateBio.equals("")) {
-                    //tasks
-                    // 1. update database
-                    // 2. reflect back to the page
+            if (!updateName.equals("") && !updateLocation.equals("") && !updateBio.equals("")) {
 
-                    ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Profile");
-                    query.whereEqualTo("user_name", ParseUser.getCurrentUser().getUsername());
-                    query.setLimit(1);
-                    query.findInBackground((objects, e) -> {
-                        String objectID = "";
-                        for (ParseObject object : objects) {
-                            objectID = object.getObjectId();
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Profile");
+                query.whereEqualTo("user_name", ParseUser.getCurrentUser().getUsername());
+                query.setLimit(1);
+                query.findInBackground((objects, e) -> {
+                    String objectID = "";
+                    for (ParseObject object : objects) {
+                        objectID = object.getObjectId();
+                    }
+                    ParseQuery<ParseObject> query1 = new ParseQuery<ParseObject>("Profile");
+                    query1.getInBackground(objectID, (object, e12) -> {
+                        if (e12 == null) {
+                            // 1. update database
+                            object.put("full_name", updateName);
+                            object.put("location", updateLocation);
+                            object.put("bio", updateBio);
+                            object.saveInBackground(e1 -> {
+                                if (e1 == null) {
+                                    FancyToast.makeText(getContext(), "Profile updated", FancyToast.LENGTH_LONG,
+                                            FancyToast.SUCCESS, false).show();
+                                    dismiss();
+                                }
+                            });
+                        } else {
+                            Log.d("Tag", e12.getMessage());
                         }
-                        ParseQuery<ParseObject> query1 = new ParseQuery<ParseObject>("Profile");
-                        query1.getInBackground(objectID, (object, e12) -> {
-                            if (e12 == null) {
-                                // 1. update database
-                                object.put("full_name", updateName);
-                                object.put("location", updateLocation);
-                                object.put("bio", updateBio);
-                                object.saveInBackground(e1 -> {
-                                    if (e1 == null) {
-                                        FancyToast.makeText(getContext(), "Profile updated", FancyToast.LENGTH_LONG,
-                                                FancyToast.SUCCESS, false).show();
-                                        dismiss();
-                                    } else {
-                                    }
-
-                                });
-//
-                            } else {
-                                Log.d("Tag", e12.getMessage());
-
-                            }
-                        });
                     });
+                });
 
-                    //passing new value
-                    prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-                    SharedPreferences.Editor editor = prefs.edit();
-                    editor.putString("prof_name", updateName);
-                    editor.putString("prof_bio", updateBio);
-                    editor.putString("prof_loc", updateLocation);
-                    editor.apply();
+                //passing new value
+                prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("prof_name", updateName);
+                editor.putString("prof_bio", updateBio);
+                editor.putString("prof_loc", updateLocation);
+                editor.apply();
 
-                } else {
-                    FancyToast.makeText(getContext(), "Fields cannot be left blank", FancyToast.LENGTH_LONG,
-                            FancyToast.ERROR, false).show();
-                }
-
+            } else {
+                FancyToast.makeText(getContext(), "Fields cannot be left blank", FancyToast.LENGTH_LONG,
+                        FancyToast.ERROR, false).show();
             }
 
         });
@@ -129,13 +114,6 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
         return view;
     }
 
-
-    private void refreshActivity() {
-        Intent intent = new Intent(getContext(), MainActivity.class);
-        startActivity(intent);
-    }
-
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -145,6 +123,4 @@ public class DialogFragment extends androidx.fragment.app.DialogFragment {
             Log.e("TAG", "onAttach: ClassCastException: " + e.getMessage());
         }
     }
-
-
 }

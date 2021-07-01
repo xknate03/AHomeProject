@@ -29,9 +29,4 @@ public class SignUpModel {
     public boolean isMatching(String password, String retypePassword) {
         return password.equals(retypePassword);
     }
-
-
-
-
-
 }

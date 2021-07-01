@@ -8,11 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.synergy_project.ahomeproject.R;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -36,7 +34,6 @@ public class PostFragment extends Fragment {
 //
         btnPost_post_fragment = v.findViewById(R.id.btnPost_post_fragment);
         btnForAdoption_post_fragment = v.findViewById(R.id.btnForAdoption_post_fragment);
-
         btnPost_post_fragment.setOnClickListener(v1 -> {
             Intent in = new Intent(getContext(), PostSomething.class);
             startActivity(in);

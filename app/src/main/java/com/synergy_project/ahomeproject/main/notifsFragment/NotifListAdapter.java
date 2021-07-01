@@ -5,12 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.synergy_project.ahomeproject.R;
-
 import org.jetbrains.annotations.NotNull;
 
 public class NotifListAdapter extends RecyclerView.Adapter<NotifListAdapter.MyViewHolder> {
@@ -22,9 +19,7 @@ public class NotifListAdapter extends RecyclerView.Adapter<NotifListAdapter.MyVi
         this.notif = notif;
         this.time = time;
         this.img = img;
-
     }
-
 
     @NonNull
     @NotNull
@@ -38,8 +33,6 @@ public class NotifListAdapter extends RecyclerView.Adapter<NotifListAdapter.MyVi
         holder.textView1.setText(notif[position]);
         holder.textView2.setText(time[position]);
         holder.imageView.setImageResource(img[position]);
-
-
     }
 
     @Override
@@ -57,7 +50,6 @@ public class NotifListAdapter extends RecyclerView.Adapter<NotifListAdapter.MyVi
             textView1 = itemView.findViewById(R.id.notifText);
             textView2 = itemView.findViewById(R.id.timeText);
             imageView = itemView.findViewById(R.id.notifImg);
-
         }
     }
 }

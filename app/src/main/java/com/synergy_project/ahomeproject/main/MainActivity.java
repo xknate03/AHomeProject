@@ -1,19 +1,15 @@
 package com.synergy_project.ahomeproject.main;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
 import com.synergy_project.ahomeproject.main.chatFragment.ChatList;
 import com.synergy_project.ahomeproject.main.groupsFragment.GroupsFragment;
 import com.synergy_project.ahomeproject.main.homeFragment.HomeFragment;
@@ -24,8 +20,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-
-import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -38,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
         //Initialize and assign variable
         //using fragments:
         bottomNavigationView = findViewById(R.id.bottomNavViewBar);
-
         performItemSelectedListener(bottomNavigationView);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
 
@@ -71,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("prof_bio", prof_bio);
                     editor.putString("prof_loc", prof_loc);
                     editor.apply();
-
                 } else {
                     Log.d("Tag", e.getMessage());
                 }
@@ -110,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         });
     }
-
 
     public void openChatActivity(View view) {
         Intent intent = new Intent(this, ChatList.class);

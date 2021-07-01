@@ -4,15 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.synergy_project.ahomeproject.R;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.MyViewHolder> {
@@ -28,9 +24,7 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.MyViewHold
         this.images = images;
     }
 
-
     @NonNull
-
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ct);
@@ -41,13 +35,9 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull GroupsAdapter.MyViewHolder holder, int position) {
         holder.rows_name.setText(group_users[position]);
-
         holder.rows_timeStamp.setText(group_timeStamp[position]);
         holder.rows_postContent.setText(group_postContent[position]);
         holder.imgProfile_rowGroup.setImageResource(images[position]);
-
-
-
     }
 
     @Override
@@ -59,7 +49,6 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.MyViewHold
 
         TextView rows_name, rows_timeStamp, rows_postContent;
         CircleImageView imgProfile_rowGroup;
-//        ImageView imgImage;
         ConstraintLayout mainLayout;
 
         public MyViewHolder(View view) {
@@ -69,8 +58,6 @@ public class GroupsAdapter extends RecyclerView.Adapter<GroupsAdapter.MyViewHold
             rows_timeStamp = view.findViewById(R.id.rows_timeStamp);
             rows_postContent = view.findViewById(R.id.rows_postContent);
             mainLayout = view.findViewById(R.id.mainLayout);
-
-
         }
     }
 }

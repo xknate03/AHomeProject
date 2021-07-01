@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.synergy_project.ahomeproject.R;
 
 public class HorizontalAdapter2 extends RecyclerView.Adapter<HorizontalAdapter2.MyViewHolder> {
@@ -28,7 +26,7 @@ public class HorizontalAdapter2 extends RecyclerView.Adapter<HorizontalAdapter2.
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ct);
-        View view = inflater.inflate(R.layout.rows_fragment_mygroups, parent, false);
+        View view = inflater.inflate(R.layout.rows_fragment_my_groups, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -45,15 +43,12 @@ public class HorizontalAdapter2 extends RecyclerView.Adapter<HorizontalAdapter2.
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgGroupImage;
-//        ImageView imgImage;
         ConstraintLayout mainLayout_horizontal;
 
         public MyViewHolder(View view) {
             super(view);
             imgGroupImage = view.findViewById(R.id.imgGroupImage);
-
             mainLayout_horizontal = view.findViewById(R.id.mainLayout_horizontal);
-
 
         }
     }

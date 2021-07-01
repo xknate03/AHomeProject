@@ -5,15 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.main.MainActivity;
-import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
 import com.synergy_project.ahomeproject.main.chatFragment.ChatList;
+import com.synergy_project.ahomeproject.signup.SignUpActivity;
 
 public class PetInformation extends AppCompatActivity {
     ImageView petImage_petInfo_activity;
@@ -23,7 +22,6 @@ public class PetInformation extends AppCompatActivity {
     String petName, petType, petSex, petStatus, petDescription;
     String petAge, petColor, petLocation;
     int petImage;
-    boolean isImageFitToScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +40,11 @@ public class PetInformation extends AppCompatActivity {
 
         getData();
         setData();
-
-
     }
-
 
     public void goBack(View view) {
-        startActivity(new Intent(this, MainActivity.class));
-
+        this.finish();
     }
-
 
     private void getData() {
         if( getIntent().hasExtra("petName") && getIntent().hasExtra("petImage") ) {
@@ -90,5 +83,10 @@ public class PetInformation extends AppCompatActivity {
 
     public void goBackToMain(View view) {
         this.finish();
+    }
+
+    public void displayToastLiked(View view) {
+        FancyToast.makeText(PetInformation.this, "Liked it!",
+                FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show();
     }
 }

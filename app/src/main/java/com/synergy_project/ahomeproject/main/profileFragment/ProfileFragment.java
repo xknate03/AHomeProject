@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment {
     TabLayout tabLayout_profile_fragment;
     ViewPager2 viewPager_profile_fragment;
     FragmentAdapter adapter;
-    Button btnEditProfile_profile_fragment, btnChat_fragProfile;
+    Button btnEditProfile_profile_fragment;
     SwipeRefreshLayout swipe_refresh;
     SharedPreferences prefs;
     CircleImageView imgpImage_profile;
@@ -75,7 +75,6 @@ public class ProfileFragment extends Fragment {
         swipe_refresh = v.findViewById(R.id.swipe_refresh);
 
         imgpImage_profile = v.findViewById(R.id.imgProfile_rowGroup);
-
 
         //adding tabLayout tab names
         String[] tabNames = {"Posts", "Listing", "About"};
@@ -111,37 +110,26 @@ public class ProfileFragment extends Fragment {
         txtBio_profile_fragment.setText(prof_bio);
         txtLocation_profile_fragment.setText(prof_loc);
 
-        btnEditProfile_profile_fragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment dialogFragment = new DialogFragment();
-                dialogFragment.show(((AppCompatActivity) getActivity()).getSupportFragmentManager(), "Dialog");
-            }
+        btnEditProfile_profile_fragment.setOnClickListener(v1 -> {
+            DialogFragment dialogFragment = new DialogFragment();
+            dialogFragment.show(((AppCompatActivity) getActivity()).getSupportFragmentManager(), "Dialog");
         });
 
         //for swipeRefresh layout
-        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                String prof_name = prefs.getString("prof_name", "Profile name");
-                String prof_user = "@" + prefs.getString("prof_user", "Profile username");
-                String prof_bio = prefs.getString("prof_bio", "Profile Bio");
-                String prof_loc = prefs.getString("prof_loc", "Profile Location");
-                txtName_profile_fragment.setText(prof_name);
-                txtUsername_profile_fragment.setText(prof_user);
-                txtBio_profile_fragment.setText(prof_bio);
-                txtLocation_profile_fragment.setText(prof_loc);
+        swipe_refresh.setOnRefreshListener(() -> {
+            String prof_name1 = prefs.getString("prof_name", "Profile name");
+            String prof_user1 = "@" + prefs.getString("prof_user", "Profile username");
+            String prof_bio1 = prefs.getString("prof_bio", "Profile Bio");
+            String prof_loc1 = prefs.getString("prof_loc", "Profile Location");
+            txtName_profile_fragment.setText(prof_name1);
+            txtUsername_profile_fragment.setText(prof_user1);
+            txtBio_profile_fragment.setText(prof_bio1);
+            txtLocation_profile_fragment.setText(prof_loc1);
 
-                swipe_refresh.setRefreshing(false);
-            }
+            swipe_refresh.setRefreshing(false);
         });
 
-        imgpImage_profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                runTimePermission();
-            }
-        });
+        imgpImage_profile.setOnClickListener(v12 -> runTimePermission());
 
 
         return v;

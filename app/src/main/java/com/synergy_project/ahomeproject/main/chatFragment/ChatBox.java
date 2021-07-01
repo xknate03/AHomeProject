@@ -1,19 +1,11 @@
 package com.synergy_project.ahomeproject.main.chatFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.synergy_project.ahomeproject.R;
-
-import java.util.ArrayList;
-
 
 public class ChatBox extends AppCompatActivity {
     TextView txtUsername_activity_chatBox,txtChatBody;
@@ -38,7 +30,6 @@ public class ChatBox extends AppCompatActivity {
         if(edtChatInput.getText() != null) {
             txtChatBody.setText(edtChatInput.getText());
         }
-
     }
 
     public void goBack(View view) {

@@ -24,6 +24,7 @@
     <string name="discover_groups">Discover Groups</string>
     <string name="your_groups">Your Groups</string>
     <string name="members_posts">Members posts:</string>
+    <string name="group_photo">groupPhoto</string>
 
     <string-array name="notif_desc">
         <item>"You posted on your wall"</item>

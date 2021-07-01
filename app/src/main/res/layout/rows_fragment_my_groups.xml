@@ -32,7 +32,7 @@
                 tools:layout_editor_absoluteX="30dp"
                 tools:layout_editor_absoluteY="10dp"
                 android:scaleType="fitXY"
-                />
+                android:contentDescription="@string/group_photo" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

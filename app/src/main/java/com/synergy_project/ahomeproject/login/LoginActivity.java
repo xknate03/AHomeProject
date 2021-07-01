@@ -1,7 +1,6 @@
 package com.synergy_project.ahomeproject.login;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.synergy_project.ahomeproject.R;
 import com.synergy_project.ahomeproject.main.MainActivity;
 import com.synergy_project.ahomeproject.signup.SignUpActivity;
 import com.parse.ParseUser;
 import com.shashank.sony.fancytoastlib.FancyToast;
-//added
+
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLoginLogin;
     EditText edtEmailLogin, edtPasswordLogin;
-    TextView txtRegisterLogin, txtForgotLogin;
+    TextView txtRegisterLogin;
     ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String email = edtEmailLogin.getText().toString();
                 String password = edtPasswordLogin.getText().toString();
                 login(email, password);
-
-
                 break;
             case R.id.txtRegisterLogin:
                 transitionToSignUpActivity();
@@ -75,7 +72,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
-
 
     public void transitionToHome() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);

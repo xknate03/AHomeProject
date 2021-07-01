@@ -1,15 +1,11 @@
 package com.synergy_project.ahomeproject.main.profileFragment.listing;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.synergy_project.ahomeproject.R;
-
 
 /**
  * A simple {@link Fragment} subclass.

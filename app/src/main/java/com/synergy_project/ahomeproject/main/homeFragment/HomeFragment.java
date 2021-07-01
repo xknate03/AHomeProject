@@ -1,32 +1,20 @@
 package com.synergy_project.ahomeproject.main.homeFragment;
 
-import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-
 import com.synergy_project.ahomeproject.R;
-import com.synergy_project.ahomeproject.main.chatFragment.ChatBox;
-import com.synergy_project.ahomeproject.main.chatFragment.ChatList;
-
 import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomeFragment extends Fragment {
     EditText edtSearchBar_home_fragment;
@@ -50,9 +38,6 @@ public class HomeFragment extends Fragment {
         int width = (int) (size.x * 0.65);
         edtSearchBar_home_fragment.setWidth(width);
 
-        //buttons
-
-
         //for recyclerView
         petName = getResources().getStringArray(R.array.petNames);
         petType = getResources().getStringArray(R.array.petType);
@@ -63,23 +48,15 @@ public class HomeFragment extends Fragment {
         petColor = getResources().getStringArray(R.array.petColor);
         petLocation = getResources().getStringArray(R.array.petLocation);
 
-
         RecyclerView recyclerView = v.findViewById(R.id.recyclerView_fragment_home);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getContext(), petName, petType,
                 description, petImage, petSex, petStatus, petAge, petColor, petLocation);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setAdapter(adapter);
 
-        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipe_refresh.setRefreshing(false);
-            }
-        });
-
+        swipe_refresh.setOnRefreshListener(() -> swipe_refresh.setRefreshing(false));
 
         return v;
     }
-
 
 }

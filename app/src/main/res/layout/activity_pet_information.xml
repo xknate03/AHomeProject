@@ -239,7 +239,8 @@
             android:paddingEnd="10dp">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/imgHeart_petInfo"
+                android:onClick="displayToastLiked"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"

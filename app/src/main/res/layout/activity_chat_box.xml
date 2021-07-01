@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.chatFragment.ChatBox"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/activity_chatList_toolbar"
@@ -55,47 +56,60 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="5dp">
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/txtChatBody"
-            android:layout_width="407dp"
-            android:layout_height="666dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="91"
             android:text="Text here"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:padding="10dp"
             android:textSize="20sp"
             android:textColor="#333333"/>
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/main"
-            android:onClick="sendChat"
-            android:text="Send"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.567"
-            app:layout_constraintStart_toEndOf="@+id/edtChatInput" />
+        <LinearLayout
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:layout_width="match_parent"
+            android:gravity="center">
 
-        <EditText
-            android:id="@+id/edtChatInput"
-            android:layout_width="280dp"
-            android:layout_height="57dp"
-            android:layout_marginBottom="8dp"
-            android:ems="10"
-            android:hint="Enter Message"
-            android:inputType="textShortMessage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:padding="10dp"
+                android:id="@+id/edtChatInput"
+                android:layout_width="0dp"
+                android:layout_weight="75"
+                android:background="@drawable/chat_format"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter Message"
+                android:layout_marginEnd="10dp"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
+
+            <Button
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="25"
+                android:backgroundTint="@color/main"
+                android:onClick="sendChat"
+                android:text="Send"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>

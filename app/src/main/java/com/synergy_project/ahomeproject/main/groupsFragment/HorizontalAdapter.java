@@ -1,20 +1,14 @@
 package com.synergy_project.ahomeproject.main.groupsFragment;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.synergy_project.ahomeproject.R;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.MyViewHolder> {
     String[] group_myGroup;
@@ -28,11 +22,10 @@ public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.My
     }
 
     @NonNull
-
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(ct);
-        View view = inflater.inflate(R.layout.rows_fragment_mygroups, parent, false);
+        View view = inflater.inflate(R.layout.rows_fragment_my_groups, parent, false);
         return new MyViewHolder(view);
     }
 
@@ -55,10 +48,7 @@ public class HorizontalAdapter extends RecyclerView.Adapter<HorizontalAdapter.My
         public MyViewHolder(View view) {
             super(view);
             imgGroupImage = view.findViewById(R.id.imgGroupImage);
-
             mainLayout_horizontal = view.findViewById(R.id.mainLayout_horizontal);
-
-
         }
     }
 }
