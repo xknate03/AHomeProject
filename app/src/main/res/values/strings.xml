@@ -134,6 +134,13 @@
         <item>Nathaniel Chavez</item>
         <item>Patrick Asis</item>
     </string-array>
+    <string-array name="group_group_names">
+        <item>Dog Lovers</item>
+        <item>Cat Lovers</item>
+
+    </string-array>
+
+
 
     <string-array name="group_postContent">
         <item>There will be a community pantry for the street at blah blah address. You can come and visit the place anytime. But you always need to wear your face mask and face shield.</item>
