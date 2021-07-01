@@ -18,11 +18,17 @@
     <string name="register">Register</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="chat">Chat</string>
+    <string name="search_here">Search here</string>
+    <string name="likes">likes</string>
+    <string name="chats">chats</string>
+    <string name="discover_groups">Discover Groups</string>
+    <string name="your_groups">Your Groups</string>
+    <string name="members_posts">Members posts:</string>
 
     <string-array name="notif_desc">
         <item>"You posted on your wall"</item>
         <item>"Joined Dog Lovers"</item>
-        <item>"You Succesfully registered!"</item>
+        <item>"You Successfully registered!"</item>
         <item>"Thank You! Welcome to A Home. Let's help each other!"</item>
     </string-array>
 
@@ -128,22 +134,26 @@
 
 
 <!--    for group fragment-->
+
     <string-array name="group_users">
         <item>Clinton Jeff</item>
         <item>Hayley Williams</item>
         <item>Nathaniel Chavez</item>
         <item>Patrick Asis</item>
     </string-array>
-    <string-array name="group_group_names">
+    <string-array name="group_discover_group_names">
         <item>Dog Lovers</item>
         <item>Cat Lovers</item>
-
     </string-array>
 
 
+    <string-array name="group_group_names">
+        <item>Dog Lovers</item>
+    </string-array>
+
 
     <string-array name="group_postContent">
-        <item>There will be a community pantry for the street at blah blah address. You can come and visit the place anytime. But you always need to wear your face mask and face shield.</item>
+        <item>There will be a community pantry for the street at a particular address. You can come and visit the place anytime. But you always need to wear your face mask and face shield.</item>
         <item>Hope everyone is safe with your pets. Enjoy the rainy season.</item>
         <item>This app is dedicated for those animals on the street. Let us unite together to help them. Let us observe good manners and proper language.</item>
         <item>I just found my lost cat while using this app. This group has helped me with my journey finding my lost Kitty. Thanks to @emma for helping me with it.</item>

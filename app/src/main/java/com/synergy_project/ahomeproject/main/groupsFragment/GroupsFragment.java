@@ -17,15 +17,15 @@ import com.synergy_project.ahomeproject.R;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-
 public class GroupsFragment extends Fragment {
     //declare here
     String[] group_name, group_timeStamp, group_postContent;
-    String[] group_myGroup;
+    String[] group_discoverGroup, group_myGroups;
     RecyclerView fragment_groups_recyclerView, fragment_groups_recyclerView_horizontal, fragment_groups_recyclerView_horizontal2 ;
     int[] images = new int[]{R.drawable.jake, R.drawable.george, R.drawable.browny,R.drawable.bella};
-    int[] group_myGroup_images = new int[]{R.drawable.cat_lovers, R.drawable.dog_lovers};
+
+    int[] group_myGroup_images = new int[]{R.drawable.dog_lovers};
+    int[] group_Discover_images = new int[]{R.drawable.cat_lovers, R.drawable.dog_lovers};
 
 
     @Nullable
@@ -38,16 +38,16 @@ public class GroupsFragment extends Fragment {
         fragment_groups_recyclerView_horizontal2 = view.findViewById(R.id.fragment_groups_recyclerView_horizontal2);
         //discover groups recyclerView
         fragment_groups_recyclerView_horizontal2.setItemAnimator(new DefaultItemAnimator());
-        group_myGroup = getResources().getStringArray(R.array.group_group_names);
-        HorizontalAdapter2 horizontalAdapter2 = new HorizontalAdapter2(getContext(), group_myGroup, group_myGroup_images);
+        group_discoverGroup = getResources().getStringArray(R.array.group_discover_group_names);
+        HorizontalAdapter2 horizontalAdapter2 = new HorizontalAdapter2(getContext(), group_discoverGroup, group_Discover_images);
         fragment_groups_recyclerView_horizontal2.setAdapter(horizontalAdapter2);
         LinearLayoutManager layoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         fragment_groups_recyclerView_horizontal2.setLayoutManager(layoutManager2);
 
         //my groups list
         fragment_groups_recyclerView_horizontal.setItemAnimator(new DefaultItemAnimator());
-        group_myGroup = getResources().getStringArray(R.array.group_group_names);
-        HorizontalAdapter horizontalAdapter = new HorizontalAdapter(getContext(), group_myGroup, group_myGroup_images);
+        group_myGroups = getResources().getStringArray(R.array.group_group_names);
+        HorizontalAdapter horizontalAdapter = new HorizontalAdapter(getContext(), group_myGroups, group_myGroup_images);
         fragment_groups_recyclerView_horizontal.setAdapter(horizontalAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         fragment_groups_recyclerView_horizontal.setLayoutManager(layoutManager);
